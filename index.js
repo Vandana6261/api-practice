@@ -14,7 +14,7 @@ search.addEventListener("click", function () {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   let loading = true;
   if (loading) {
-    loadingMsg.textContent = "Loading";
+    loadingMsg.style.display = "flex"
     weatherCity.textContent = "";
     temp.textContent = "";
     humidity.textContent = "";
@@ -25,7 +25,7 @@ search.addEventListener("click", function () {
   getWeatherData(url)
     .then((data) => {
       loading = false;
-      if (!loading) loadingMsg.textContent = "";
+      if (!loading) loadingMsg.style.display = "none"
       if (data.cod == 404) {
         alert("Please enter a valid city name ");
       } else {
@@ -39,7 +39,6 @@ search.addEventListener("click", function () {
           condition.textContent = "clear sky";
         }
       }
-
     })
     .catch((error) => {
       console.log(error);

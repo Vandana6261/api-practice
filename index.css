@@ -58,6 +58,32 @@ h2, p {
     
 }
 
+#loadingMsg {
+    display: none;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #6e88dd;
+}
+#loadingMsg::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-top: 3px dotted white;
+    border-radius: 50%;
+    animation: spin 1s ease-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media screen and (max-width:600px) {
     .main {
         width: 90%;
